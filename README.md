@@ -63,7 +63,9 @@ or, For Word Online: (remove is by clearing browser cache)
 * the cert file provided on initial commit will expire in 2025. See below
   for guidelines on making/placing your own certificate files.
 
-4. run the server (below)
+4. run the server from command, powershell or WSL: `npm start`
+* start webpack, which packs up the node_modules dir and index.js into dist/main.js
+* starts 'webpack-dev-server' to serve /dist/template.html
 
 5. in Word, open the new taskpane: ribbon -> Home -> "Pane Button Label"
 * check at a browser: https://localhost:3000/template.html
@@ -72,17 +74,8 @@ or, For Word Online: (remove is by clearing browser cache)
    available. Unless Word throws an error (certificates, can't find, etc.), it
    may just still be loading. Inspect and/or Refresh.
 
-Since this is running via webpack, changes merged/visible on Refresh.
+Since this is running via webpack, changes merged/visible on Refresh. Maybe.
 
-## RUNNING THE SERVER
-
-To 'run' the add-in server, use (from command, powershell, or WSL):
-
-`npm run serve`
-
-This will:
-* start webpack, which packs up the node_modules dir and index.js into dist/main.js
-* starts 'webpack-dev-server' to serve /dist/template.html
 
 ## REMOVING THE ADD-IN
 
