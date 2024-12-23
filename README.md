@@ -55,7 +55,7 @@ or, For Word Online: (remove is by clearing browser cache)
   Upload My Add-in ... then just upload manifest.xml.
 
 2. install npm, node, webpack 5+ & all their trappings.
-    Don't forget to get the project modules: `npm -i --save-dev`
+    Don't forget to get the project modules: `npm install`
 
 3. add the ca.crt file to the Trusted Certificates Store on Windows
 * one way: double-click the ca.crt file from Windows File Explorer, add
