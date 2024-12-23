@@ -8,7 +8,7 @@
   "scripts": {
     "watch": "webpack --mode development --watch",
     "build": "webpack --mode development",
-    "serve": "webpack serve --mode development"
+    "start": "webpack serve --mode development"
   },
   "dependencies": {
     "lodash": "^4.17.21"
