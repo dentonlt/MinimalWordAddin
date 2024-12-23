@@ -60,6 +60,8 @@ or, For Word Online: (remove is by clearing browser cache)
 3. add the ca.crt file to the Trusted Certificates Store on Windows
 * one way: double-click the ca.crt file from Windows File Explorer, add
   to user's Trusted Certificate Store.
+* the cert file provided on initial commit will expire in 2025. See below
+  for guidelines on making/placing your own certificate files.
 
 4. run the server (below)
 
