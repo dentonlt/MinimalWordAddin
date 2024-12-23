@@ -18,12 +18,12 @@ dropped out all the useful scaffolding (modules for debugging, maintenance,
 submission to Azure, etc.).
 
 Provided:
-(1) a mock manifest.xml. This is used to 'install' the Add-in
+1. a mock manifest.xml. This is used to 'install' the Add-in
   and tell Word the server's URL (in this case, https://localhost:3000)
-(2) a static html file @ dist/taskpane.html
-(3) script content from src/index.js webpack'd into dist/main.js
-(4) https support from localhost:3000 (dummy certs provided)
-(5) the rest of the webpack/npm settings required.
+2. a static html file @ dist/taskpane.html
+3. script content from src/index.js webpack'd into dist/main.js
+4. https support from localhost:3000 (dummy certs provided)
+5. the rest of the webpack/npm settings required.
 
 This was built/tested on Windows 11 with Word Desktop.
 
