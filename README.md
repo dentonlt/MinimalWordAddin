@@ -1,10 +1,10 @@
-### minimal word addin project
+# minimal word addin project
 [uses webpack ... so maybe not so minimal ...]
 
-#CHANGES
+### CHANGES
 20241222 dentonlt - I'm not a programmer. YMMV.
 
-##SUMMARY
+## SUMMARY
 
 This sample project provides a minimal Word Add-in taskpane & server. This
 is not "how to create an Add-in," and it is not a viable Add-in
@@ -27,11 +27,13 @@ Provided:
 
 This was built/tested on Windows 11 with Word Desktop.
 
-##USAGE - GETTING IT RUNNING
+## USAGE - GETTING IT RUNNING
 
-You need to
-(0) put the project tree somewhere sane.
-(1) sideload the Add-In to Word. Just "tell Word about manifest.xml".
+You need to:
+
+0. put the project tree somewhere sane.
+
+1. sideload the Add-In to Word. Just "tell Word about manifest.xml".
 
 For Word Desktop:
 * copy manifest.xml into a folder where your user has permissions.
@@ -52,32 +54,35 @@ or, For Word Online: (remove is by clearing browser cache)
 * click ribbon -> Home -> Add-ins -> More Add-ins -> My organisation ->
   Upload My Add-in ... then just upload manifest.xml.
 
-(2) install npm, node, webpack 5+ & all their trappings.
-    Don't forget to get the project modules: 'npm -i --save-dev'.
-(3) add the ca.crt file to the Trusted Certificates Store on Windows
-** one way: double-click the ca.crt file from Windows File Explorer, add
+2. install npm, node, webpack 5+ & all their trappings.
+    Don't forget to get the project modules: `npm -i --save-dev`
+
+3. add the ca.crt file to the Trusted Certificates Store on Windows
+* one way: double-click the ca.crt file from Windows File Explorer, add
   to user's Trusted Certificate Store.
-(4) run the server (below)
-(5) in Word, open the new taskpane: ribbon -> Home -> "Pane Button Label"
-** check at a browser: https://localhost:3000/template.html
-** if the browser works ... Word -should- open the same as a Taskpane. The
+
+4. run the server (below)
+
+5. in Word, open the new taskpane: ribbon -> Home -> "Pane Button Label"
+* check at a browser: https://localhost:3000/template.html
+* if the browser works ... Word -should- open the same as a Taskpane. The
    total file is quite large for Word ... so it may take 10-15s or more to be
    available. Unless Word throws an error (certificates, can't find, etc.), it
    may just still be loading. Inspect and/or Refresh.
 
 Since this is running via webpack, changes merged/visible on Refresh.
 
-##RUNNING THE SERVER
+## RUNNING THE SERVER
 
 To 'run' the add-in server, use (from command, powershell, or WSL):
 
-npm run serve
+`npm run serve`
 
 This will:
 * start webpack, which packs up the node_modules dir and index.js into dist/main.js
 * starts 'webpack-dev-server' to serve /dist/template.html
 
-##REMOVING THE ADD-IN
+## REMOVING THE ADD-IN
 
 For Word Desktop:
 * File -> Options -> Trust Center -> Trusted Add-in Catalogs
@@ -89,7 +94,7 @@ For Word Desktop:
 For Word Online:
 * clear the browser cache.
 
-##OTHER NOTES
+## OTHER NOTES
 
 package.json
 * note the list of required modules, compare to stock
@@ -102,21 +107,22 @@ src/index.js
 * the custom 'stuff' injected into main.js.
 
 Generating Certificates - howto, etc.
-* First, generate ca.crt, ca.key, cert.crt and cert.key
-** install mkcert using 'npm -i --save-dev mkcert'
-** read the mkcert help ... setting certificate properties will help find
+1. First, generate ca.crt, ca.key, cert.crt and cert.key
+* install mkcert using `npm -i --save-dev mkcert`
+* read the mkcert help ... setting certificate properties will help find
    the certificate in the Trusted Certificates Store and bugcheck.
-** generate mock certificate authority files:
-  'npx mkcert create-ca --organisation "mycaorg" --validity 365'
-** generate mock identity files:
-  'npx mkcert create-cert --organisation "myserverorg"'
-* Then, combine cert.crt and cert.key into cert.pfx. Easy via PowerShell:
-** https://stackoverflow.com/questions/48464705/how-to-get-pfx-file-from-cer-and-key
-** certutil -mergepfx .\source.crt output.pfx
-** certutil will ask for a password. Pass that to webpack as below.
-* add ca.crt to the Windows Trusted Root Certificates Store
-** From File Explorer, double-click on ca.crt and follow the prompts.
-* provide those certificates to webpack via webpack.config.js:
+* generate mock certificate authority files:
+  `npx mkcert create-ca --organisation "mycaorg" --validity 365`
+* generate mock identity files:
+  `npx mkcert create-cert --organisation "myserverorg"`
+2. Then, combine cert.crt and cert.key into cert.pfx. Easy via PowerShell:
+* https://stackoverflow.com/questions/48464705/how-to-get-pfx-file-from-cer-and-key
+* `certutil -mergepfx .\source.crt output.pfx`
+*  certutil will ask for a password. Pass that to webpack as below.
+3. add ca.crt to the Windows Trusted Root Certificates Store
+  * From File Explorer, double-click on ca.crt and follow the prompts.
+4. provide those certificates to webpack via webpack.config.js:
+```
 module.exports = {
  ...
   devServer: {
@@ -137,6 +143,7 @@ module.exports = {
   },
   ...
 };
+```
 
 
 
