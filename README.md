@@ -1,10 +1,10 @@
-minimal word addin project
+### minimal word addin project
 [uses webpack ... so maybe not so minimal ...]
 
-CHANGES
-20241222 dentonlt
+#CHANGES
+20241222 dentonlt - I'm not a programmer. YMMV.
 
-SUMMARY
+##SUMMARY
 
 This sample project provides a minimal Word Add-in taskpane & server. This
 is not "how to create an Add-in," and it is not a viable Add-in
@@ -27,7 +27,7 @@ Provided:
 
 This was built/tested on Windows 11 with Word Desktop.
 
-USAGE - GETTING IT RUNNING
+##USAGE - GETTING IT RUNNING
 
 You need to
 (0) put the project tree somewhere sane.
@@ -67,7 +67,7 @@ or, For Word Online: (remove is by clearing browser cache)
 
 Since this is running via webpack, changes merged/visible on Refresh.
 
-RUNNING THE SERVER
+##RUNNING THE SERVER
 
 To 'run' the add-in server, use (from command, powershell, or WSL):
 
@@ -77,7 +77,7 @@ This will:
 * start webpack, which packs up the node_modules dir and index.js into dist/main.js
 * starts 'webpack-dev-server' to serve /dist/template.html
 
-REMOVING THE ADD-IN
+##REMOVING THE ADD-IN
 
 For Word Desktop:
 * File -> Options -> Trust Center -> Trusted Add-in Catalogs
@@ -89,7 +89,7 @@ For Word Desktop:
 For Word Online:
 * clear the browser cache.
 
-OTHER NOTES
+##OTHER NOTES
 
 package.json
 * note the list of required modules, compare to stock
