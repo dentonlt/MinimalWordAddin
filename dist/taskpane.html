@@ -1,0 +1,39 @@
+
+<!-- taskpane.html
+  
+  minimal Word Add-in taskpane sample
+
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Minimal Word Addin - Taskpane</title>
+
+    <!-- Office JavaScript API -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+    
+    <!--
+    <script type="text/javascript">
+    /* global document, Office, Word */
+    Office.onReady(function (info) {
+      if (info.host === Office.HostType.Word) {
+        document.getElementById("app-body").style.display = "flex";
+      }
+    });
+    </script>
+  -->
+
+  </head>
+  <body>
+	<main id="app-body">
+	
+    <div><p>This is a static HTML file. We inject the output from main.js below.</p></div>
+    <div><p>==== Injected text below ====</p></div>
+    
+    <div><p><script src="main.js"></script></p></div>
+	
+	</main>
+  </body>
+</html>

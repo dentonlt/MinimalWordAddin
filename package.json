@@ -1,0 +1,22 @@
+{
+  "name": "minimalwordaddin",
+  "version": "0.0.1",
+  "description": "minimal word add in",
+  "license": "Sure",
+  "author": "Yep",
+  "main": "index.js",
+  "scripts": {
+    "watch": "webpack --mode development --watch",
+    "build": "webpack --mode development",
+    "serve": "webpack serve --mode development"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@typescript/analyze-trace": "^0.10.1",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
+  }
+}
